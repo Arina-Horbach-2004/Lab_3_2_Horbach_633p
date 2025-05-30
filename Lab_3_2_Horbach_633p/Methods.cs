@@ -367,6 +367,7 @@ namespace Lab_3_2_Horbach_633p
             all.AddRange(bay);
             all.AddRange(lap);
 
+
             var freq = all.GroupBy(x => x).Select(g => new { g.Key, Count = g.Count() }).OrderByDescending(x => x.Count).ToList();
             int maxFreq = freq.First().Count;
             var mostFreq = freq.Where(x => x.Count == maxFreq).Select(x => x.Key).ToList();
